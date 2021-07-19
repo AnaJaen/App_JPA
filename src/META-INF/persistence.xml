@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" 
+xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpa" transaction-type="RESOURCE_LOCAL">
+	<!--	<mapping-file>META-INF/orm.xml</mapping-file>   -->
+		
+		<class>fachlogik.ComputerTomographie</class>
+		<class>fachlogik.Endoskopie</class>
+		<!-- <class>fachlogik.Geschlecht</class>  -->
+		<class>fachlogik.MagnetResonanz</class>
+		<class>fachlogik.Patient</class>
+		<class>fachlogik.Person</class>
+		<class>fachlogik.Personal</class>
+		<class>fachlogik.Roentgen</class>
+		<class>fachlogik.Ultraschall</class>
+		<class>fachlogik.Untersuchung</class>
+		
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+ 			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:jpa.db"/>
+<!-- Oracle Database:
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+			<property name="javax.persistence.jdbc.user" value="system"/>
+			<property name="javax.persistence.jdbc.password" value="oracle"/>
+ -->
+			<property name="eclipselink.logging.level" value="FINE"/>
+<!--			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/> -->
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<property name="eclipselink.target-database" value="Database"/>
+		</properties>
+	</persistence-unit>
+</persistence>
